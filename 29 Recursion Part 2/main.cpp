@@ -100,6 +100,13 @@ void mergeSort(vector<int>& arr, int st, int end){
 
 int main()
 {
+
+    // vector<int> arr1 = {1, 2, 7, 4, 5};
+    // cout << "Test 1 (ascending): " 
+    //      << (isArraySortedAsc(arr1, arr1.size()) ? "Sorted" : "Not sorted") 
+    //      << endl;
+
+    
     vector<int> arr = {12, 31, 35, 8, 32, 17};
     mergeSort(arr, 0, arr.size()-1);
 
