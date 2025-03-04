@@ -49,21 +49,22 @@ int main()
     // cout<<"Maximum Subarray Sum is: "<<maxSum<<endl;
 
 
+//  Kadane's Algorithms
 
-    int arr[] = {1,2,3,4,5};
-    int size = sizeof(arr) / sizeof(int);
-    int maxSum = INT_MIN;
-    int currentSum = 0;
-    for (int i = 0; i < size; i++)
-    {
-        currentSum+= arr[i];
-        maxSum = max(currentSum, maxSum);
-        if (currentSum < 0)
-        {
-            currentSum = 0;
-        }
+    // int arr[] = {1,2,3,4,5};
+    // int size = sizeof(arr) / sizeof(int);
+    // int maxSum = INT_MIN;
+    // int currentSum = 0;
+    // for (int i = 0; i < size; i++)
+    // {
+    //     currentSum+= arr[i];
+    //     maxSum = max(currentSum, maxSum);
+    //     if (currentSum < 0)
+    //     {
+    //         currentSum = 0;
+    //     }
         
-    }
-    cout<<"Maximum Subarray Sum is: "<<maxSum<<endl;
+    // }
+    // cout<<"Maximum Subarray Sum is: "<<maxSum<<endl;
     return 0;
 }
