@@ -14,25 +14,46 @@ using namespace std;
 
 // Optimize (Binary Search) Apprach
 int singleNonDuplicate(vector<int>& nums) {
-    int left = 0, right = nums.size() - 1;
-    while (left < right) {
-        int mid = left + (right - left) / 2;
-        // بررسی زوج یا فرد بودن
-        if (mid % 2 == 1) {
-            mid--; // همیشه روی جفت اول قرار می‌گیریم
+    int n = nums.size();
+
+    if (n == 1) return nums[0];
+
+    int start = 0, end = n-1;
+
+    while (start <= end)
+    {
+        int middle = start + (end - start)/2;
+
+        if (middle == 0 && nums[0] != nums[1]) return nums[middle];
+        if (middle == n-1 && nums[n-1] != nums[n-2]) return nums[middle];
+
+        if (nums[middle-1] != nums[middle] && nums[middle] != nums[middle+1]) return nums[middle];
+
+       
+        if (middle % 2 == 0) // even
+        {
+            if (nums[middle-1] == nums[middle])
+            {
+                end = middle -1;
+            }else{
+                start = middle +1;
+            }
+            
+        }else{ // odd
+            if (nums[middle-1] == nums[middle])
+            {
+                start= middle +1;
+            }else{
+                end = middle -1;
+            }
         }
-        // بررسی جفت درست یا غلط
-        if (nums[mid] == nums[mid + 1]) {
-            left = mid + 2;
-        } else {
-            right = mid;
-        }
+        
     }
-    return nums[left];
+    return -1;
 }
 
 int main() {
-    vector<int> nums = {1, 1, 2, 3, 3, 4, 4, 8, 8};
+    vector<int> nums = {1, 1, 2, 2, 3, 4, 4, 8, 8};
     cout << "Single Element: " << singleNonDuplicate(nums) << endl;
     return 0;
 }
