@@ -11,6 +11,10 @@ int main()
     q.push(2);
     q.push(3);
 
+    // Accessing the front and back elements
+    cout << q.front() << endl;
+    cout << q.back();
+
     while (!q.empty())
     {
         cout<<q.front()<<" ";

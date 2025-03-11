@@ -16,5 +16,13 @@ int main()
         cout<<p.first << " "<<p.second<<endl;
     }
     
+
+
+    // // Finding element with key 2
+    // auto it = m.find(2);
+    
+    // if (it != m.end())
+    //     cout << it->first << ": " << it->second;
+    // else cout << "Not Found";
     return 0;
 }

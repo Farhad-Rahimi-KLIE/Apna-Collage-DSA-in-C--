@@ -10,10 +10,12 @@ int main()
     s.push(2);
     s.push(3);
 
-    stack<int> s2;
-    s2.swap(s);
-    cout<<"s size : "<<s.size()<<endl;
-    cout<<"s2 size : "<<s2.size()<<endl;
+    // Deleting top element
+     s.pop();
+     
+    // Accessing the top element
+    cout << s.top();
+
 
     // while (!s.empty())
     // {
